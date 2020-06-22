@@ -6,7 +6,7 @@ import ClosingOrder from './ClosingOrder'
 
 const Order = () => {
  return ( 
-        <div className='col-md-4 float-right bg-light border border-info rounded-lg'>
+        <div className='col-md-5 float-right bg-light border border-info rounded-lg'>
             <OrderInformation />
             <OrderContent />
             <ClosingOrder />
