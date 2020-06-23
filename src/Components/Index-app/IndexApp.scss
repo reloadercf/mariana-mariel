@@ -1,0 +1,25 @@
+$bqcream: #FCFAE3;
+$bqpink: #FF7BAC;
+$bqgreen: #1EBC9E;
+$btMenu: '../Assets/btnMenu.png';
+@mixin container {
+    border-radius: 10px;
+    border: solid $bqgreen 5pt;
+    background-color: $bqcream;
+}
+.container {
+    width: 910px;
+    height: 650px;
+    margin-top: 3em;
+    margin-bottom: 4em;
+    @include container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+li{
+    list-style: none;
+}
+
+
+
