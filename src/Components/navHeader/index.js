@@ -5,9 +5,9 @@ import btnHistorial from '../../Assets/btnHistorial.png';
 
 const NavHeader = () => (
     <div>
-        <button><img src = {btnOrden}></img></button>
-        <button><img src = {btnCocina}></img></button>
-        <button><img src = {btnHistorial}></img></button>
+        <button><img src = {btnOrden} alt='btnOrden'></img></button>
+        <button><img src = {btnCocina} alt='btnCocina'></img></button>
+        <button><img src = {btnHistorial} alt='btnHistorial'></img></button>
     </div>
 );
 

@@ -1,16 +1,14 @@
 import React from 'react';
-import IndexApp from './Components/Index-app/IndexApp'
-import Order from './Components/Order/Order'
-import IndexMenu from './Components/Menu/IndexMenu';
+// import IndexApp from './Components/Index-app/IndexApp'
+import MenuView from './Components/Order/MenuView';
 import Header from './Components/header'
 
 const App = () => {
   return ( 
-    <div className='container'>
+    <div>
       <Header />
-      <IndexApp />
-      <IndexMenu />
-      <Order />
+      {/* <IndexApp /> */}
+      <MenuView />
     </div>
    );
 }

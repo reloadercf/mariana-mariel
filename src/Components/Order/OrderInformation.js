@@ -1,18 +1,22 @@
 import React from 'react';
+import { Input, Select } from 'antd';
 
 const OrderInformation = () => {
+    const { Option } = Select;
+
+    function handleChange(value) {
+      console.log(`selected ${value}`);
+    }
     return ( 
-        <div className='row m-2'>
-            <select className="form-control-sm col-md m-1" id="exampleFormControlSelect1">
-                <option>Mesa 1</option>
-                <option>Mesa 2</option>
-                <option>Mesa 3</option>
-                <option>Mesa 4</option>
-                <option>Mesa 5</option>
-            </select>
-            <input type='text' placeholder='Orden' className='col-md m-1 sm' />
-            <input type='text' placeholder='Nombre' className='col-md-12 m-1 sm' />
-            <hr className='m-2' />
+        <div>
+            <Select placeholder="Mesa" style={{ width: 175 }} onChange={handleChange}>
+                <Option value="Mesa1">Mesa 1</Option>
+                <Option value="Mesa2">Mesa 2</Option>
+                <Option value="Mesa3" >Mesa 3</Option>
+                <Option value="Mesa4">Mesa 4</Option>
+            </Select>
+            <Input placeholder="Orden" style={{ width: 175 }} />
+            <Input placeholder="Nombre" />
         </div>
      );
 }
