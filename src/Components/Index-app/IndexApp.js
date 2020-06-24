@@ -2,7 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import './IndexApp.scss'; 
 import logo from '../../Assets/logoPrim.png'
-import btn from '../../Assets/btnMenu.png'
+import btnVerde from '../../Assets/btnOrden.png'
+
+import Button from '../Button/Button';
+
+
 
 function IndexApp () {
     return (
@@ -13,10 +17,10 @@ function IndexApp () {
             <nav>
                 <ul>
                     <Link to ='/orden'>
-                        <li><img src={btn} /></li>
+                        <li><Button value ='orden' green pink /></li>
                     </Link>
                     
-                    <li><img src={btn} /></li>
+                    <li><Button value ='cocina'/></li>
                 </ul>
             </nav>
             <div className='auth'>

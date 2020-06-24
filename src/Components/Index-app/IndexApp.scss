@@ -2,6 +2,7 @@ $bqcream: #FCFAE3;
 $bqpink: #FF7BAC;
 $bqgreen: #1EBC9E;
 $btMenu: '../Assets/btnMenu.png';
+$fontTitles: Victoria Melody;
 @mixin container {
     border-radius: 10px;
     border: solid $bqgreen 5pt;
@@ -17,9 +18,29 @@ $btMenu: '../Assets/btnMenu.png';
     flex-direction: column;
     align-items: center;
 }
-li{
-    list-style: none;
+nav{
+    width: 90%;
 }
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+li{
+    position: relative;
+    list-style: none;
+    font-family: $fontTitles;
+    font-size: 55pt;
+    color: white;
+
+    p{
+        position: relative;
+    }
+    img{
+        position: absolute;
+    }
+}
+
 
 
 
