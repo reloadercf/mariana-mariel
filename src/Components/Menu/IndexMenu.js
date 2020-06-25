@@ -14,12 +14,6 @@ const IndexMenu = () => {
             </div>
             <div className='d-flex row'>
                 <CardMenu />
-                <CardMenu />
-                <CardMenu />
-                <CardMenu />
-                <CardMenu />
-                <CardMenu />
-                <CardMenu />
             </div>
             
         </Col>
