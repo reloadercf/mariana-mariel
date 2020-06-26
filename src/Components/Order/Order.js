@@ -1,5 +1,5 @@
 import React from 'react'
-import './Order.css'; 
+import './Order.scss'; 
 import { Col } from 'antd';
 import OrderInformation from './OrderInformation'
 import OrderContent from './OrderContent'
