@@ -1,16 +1,17 @@
 import React from 'react'
 import './Order.css'; 
+import { Col } from 'antd';
 import OrderInformation from './OrderInformation'
 import OrderContent from './OrderContent'
 import ClosingOrder from './ClosingOrder'
 
 const Order = () => {
  return ( 
-        <div className='col-md-5 float-right bg-light border border-info rounded-lg'>
+        <Col className='order' size='large' span={9} >
             <OrderInformation />
             <OrderContent />
             <ClosingOrder />
-        </div>
+        </Col>
      );
 }
  

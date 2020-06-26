@@ -1,8 +1,19 @@
 .containerHeader{
     width: 990px;
     height: 110px;
+    margin: 1em;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     background-color: #FF7BAC;
     border-radius: 10px;
+    .containerLogo{
+        display: flex;
+        justify-content: flex-end;
+        margin: -1em;
+        a{
+            position: relative;
+        }
+    }
+   
 }
