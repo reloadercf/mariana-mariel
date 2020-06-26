@@ -1,15 +1,25 @@
 import React from 'react';
-// import IndexApp from './Components/Index-app/IndexApp'
-import MenuView from './Components/Order/MenuView';
-import Header from './Components/header'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import IndexApp from './Components/IndexApp/IndexApp'
+import OrderSection from './Components/OrderSection/OrderSection.js'
+import '../src/App.scss';
 
 const App = () => {
   return ( 
-    <div>
-      <Header />
-      {/* <IndexApp /> */}
-      <MenuView />
-    </div>
+    <Router>
+        <Switch>
+          <div className='app'>
+            <div className='indexApp'>
+              <Route path ='/' exact component = {IndexApp} />
+            </div>
+            <div className= 'content'>
+              <Route path ='/orden' component={OrderSection}/>
+            </div>    
+          </div>
+        </Switch>
+    </Router>
+    
+   
    );
 }
  

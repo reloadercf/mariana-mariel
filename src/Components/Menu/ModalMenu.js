@@ -15,12 +15,14 @@ const ModalMenu = () => {
     };
   
     let handleOk = e => {
+      console.log(e);
       setState({
         visible: false,
       });
     };
   
     let handleCancel = e => {
+      console.log(e);
         setState({
         visible: false,
       });

@@ -1,6 +1,6 @@
 import React from 'react';
-import btnOrdenar from '../../Assets/btnOrdenar.png'
 import { Input, Select, DatePicker, Divider } from 'antd';
+import Button from '../Button/Button';
 
 const ClosingOrder = () => {
     const { Option } = Select;
@@ -13,7 +13,7 @@ const ClosingOrder = () => {
         <div>
             <div className='btnOrder'>
                 <h4>Total: $20</h4>
-                <input type="image" name="btnOrdenar" src={btnOrdenar} alt="Ordenar"/>
+                <Button enter />
             </div>
             <div>
                 <Divider />
@@ -29,4 +29,4 @@ const ClosingOrder = () => {
      );
 }
  
-export default ClosingOrder;
+export default ClosingOrder
