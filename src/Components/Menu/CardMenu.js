@@ -1,17 +1,22 @@
 import React from 'react';
+import { Card } from 'antd';
+import ModalMenu from './ModalMenu';
 
 const CardMenu = () => {
+    const { Meta } = Card;
+
     return ( 
         <div>
-            <div className="card col-10 m-2">
-                <img src="https://picsum.photos/100" className="card-img-top" alt="opcion" />
-                <div className="card-body">
-                    <h5 className="card-title">Café americano</h5>
-                    <p className="card-text">$5</p>
-                </div>
-            </div>
+            <Card className='card' cover={<img alt="example" src="https://picsum.photos/100"/>}>
+                <Meta title="Café Americano" description="$5" />
+                <ModalMenu />
+            </Card>
         </div>
      );
 }
  
 export default CardMenu;
+
+
+
+
