@@ -18,6 +18,9 @@ $fontTitles: Victoria Melody;
     flex-direction: column;
     align-items: center;
 }
+.logo{
+    padding: 3em;
+}
 nav{
     width: 90%;
 }
@@ -25,20 +28,11 @@ ul{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding: 3em 0em;
 }
 li{
     position: relative;
     list-style: none;
-    font-family: $fontTitles;
-    font-size: 55pt;
-    color: white;
-
-    p{
-        position: relative;
-    }
-    img{
-        position: absolute;
-    }
 }
 
 

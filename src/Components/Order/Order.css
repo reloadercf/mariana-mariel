@@ -1,3 +1,22 @@
 body {
     background-image: url('../../Assets/background.png');
 }
+.MenuView {
+    justify-content: space-evenly;
+}
+.order {
+    height: fit-content;
+}
+.order, .indexMenu {
+    margin-top: 2rem;
+    background: #ffffff;
+    padding: 0.5rem;
+    border: #00e1ff solid 0.2rem;
+    border-radius: 0.7rem
+    
+}
+.btnOrder {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}

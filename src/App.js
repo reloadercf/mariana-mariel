@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import IndexApp from './Components/Index-app/IndexApp'
+import IndexApp from './Components/IndexApp/IndexApp'
 import OrderSection from './Components/OrderSection/OrderSection.js'
-import '../src/styles/App.scss';
+import '../src/App.scss';
 
 const App = () => {
   return ( 

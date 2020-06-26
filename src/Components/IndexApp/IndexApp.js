@@ -1,9 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import './IndexApp.scss'; 
-import logo from '../../Assets/logoPrim.png'
-import btnVerde from '../../Assets/btnOrden.png'
-
+import '../IndexApp/IndexApp.scss'; 
+import Logo from '../Logo/Logo';
 import Button from '../Button/Button';
 
 
@@ -11,16 +9,15 @@ import Button from '../Button/Button';
 function IndexApp () {
     return (
         <div className="container">
-            <div >
-                <img src={logo} alt="logo" className="logo"/> 
+            <div className = 'logo'>
+                <Logo big/> 
             </div>       
             <nav>
                 <ul>
                     <Link to ='/orden'>
-                        <li><Button value ='orden' green pink /></li>
+                        <li><Button value = 'Orden' pink /></li>
                     </Link>
-                    
-                    <li><Button value ='cocina'/></li>
+                    <li><Button value = 'Cocina'/></li>
                 </ul>
             </nav>
             <div className='auth'>

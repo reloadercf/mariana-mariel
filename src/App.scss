@@ -1,11 +1,10 @@
 $bqcream: #FCFAE3;
 $bqpink: #FF7BAC;
 $bqgreen: #1EBC9E;
-$btMenu: '../Assets/btnMenu.png';
+$btMenu: '../src/Assets/btnMenu.png';
 
 .app {
     width: 100%;
     height: auto;
-    background-image: url('../Assets/background.png');
-  
+    background-image: url('../src/Assets/background.png');
   }

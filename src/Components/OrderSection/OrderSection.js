@@ -1,16 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Row } from 'antd'
 import Order from '../Order/Order'
 import IndexMenu from '../Menu/IndexMenu'
-import Header from '../header/index'
+import Header from '../Header/Header'
 
 const OrderSection = () => {
     return ( 
-          <div className= 'content'>
+          <Row className= 'content'>
             <Header />
             <IndexMenu />
             <Order />
-          </div>      
+          </Row>      
      );
   }
    
