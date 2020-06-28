@@ -1,3 +1,13 @@
+$bqcream: #FCFAE3;
+$bqpink: #FF7BAC;
+$bqgreen: #1EBC9E;
+$btMenu: '../Assets/btnMenu.png';
+$fontTitles: Victoria Melody;
+@mixin container {
+    border-radius: 10px;
+    border: solid $bqgreen 5pt;
+    background-color: $bqcream;
+}
 .MenuView {
     justify-content: space-evenly;
 }
@@ -6,10 +16,8 @@
 }
 .order, .indexMenu {
     margin-top: 2rem;
-    background: #ffffff;
     padding: 0.5rem;
-    border: #00e1ff solid 0.2rem;
-    border-radius: 0.7rem
+    @include container;
     
 }
 .btnOrder {

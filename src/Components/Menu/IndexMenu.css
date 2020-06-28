@@ -1,3 +1,8 @@
 .card {
     margin: 1rem;
 }
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
