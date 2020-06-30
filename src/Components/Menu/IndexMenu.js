@@ -1,25 +1,28 @@
 import React from 'react';
-import { Col } from 'antd';
+import { Col, Row } from 'antd';
 import Button from '../Button/Button';
 import CardMenu from './CardMenu';
+import './IndexMenu.css'
+import menu from '../../Assets/menu.json'
 
 
 const IndexMenu = () => {
+    const menuItems = menu.desayuno.map(item => {
+        return (
+            <CardMenu key={item.id} item={item}/>
+        )
+    })
+    
     return ( 
+        
         <Col className='order' size='large' span={14}>
             <div className="buttons d-flex justify-content-around m-3">
                 <Button pink />
                 <Button pink />
             </div>
-            <div className='d-flex row'>
-                <CardMenu />
-                <CardMenu />
-                <CardMenu />
-                <CardMenu />
-                <CardMenu />
-                <CardMenu />
-                <CardMenu />
-            </div>
+            <Row >
+                {menuItems}
+            </Row>
             
         </Col>
      );

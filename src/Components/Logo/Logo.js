@@ -11,7 +11,7 @@ const Logo = ({ small = false, big = false}) => {
     }
    
     return(
-            <img src= {src} ></img>
+            <img src= {src} alt='logo'></img>
     )
   
 }

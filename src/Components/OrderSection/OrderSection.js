@@ -6,7 +6,7 @@ import Header from '../Header/Header'
 
 const OrderSection = () => {
     return ( 
-          <Row className= 'content'>
+          <Row justify="space-around" className= 'content'>
             <Header />
             <IndexMenu />
             <Order />
