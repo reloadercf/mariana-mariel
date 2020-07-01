@@ -8,8 +8,8 @@ const IndexMenu = () => {
     return ( 
         <Col className='order' size='large' span={14}>
             <div className="buttons d-flex justify-content-around m-3">
-                <Button pink />
-                <Button pink />
+                <Button value = 'Comidas' pink />
+                <Button value = 'Desayunos' pink />
             </div>
             <div className='d-flex row'>
                 <CardMenu />
