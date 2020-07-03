@@ -4,7 +4,7 @@ import btnRosa from '../../Assets/btnMenu.png'
 import btnVerde from '../../Assets/btnHeader.png'
 import btnEnter from '../../Assets/btnEnter.png'
 
-const Button = ({ value, pink = false, green = false, enter= false }) => {
+const Button = ({ value, pink = false, green = false, enter= false, onClick }) => {
     let src = btnRosa;
     if (pink === true) {
         src = btnRosa
@@ -23,7 +23,7 @@ const Button = ({ value, pink = false, green = false, enter= false }) => {
     //     <p>{value} </p>
     // </>
 
-    <button style={style}>{value}</button>
+    <button style={style} onClick={onClick}>{value}</button>
     )
 }
 

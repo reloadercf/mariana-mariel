@@ -3,23 +3,23 @@
         {
             "item": "Café americano",
             "precio": 5,
-            "imagen": "../Products/cafe.png"
+            "imagen": "./Products/cafe.png"
         },
         {
             "item": "Café con leche",
             "precio": 7,
-            "imagen": "../Products/cafeLeche.png"
+            "imagen": "./Products/cafeLeche.png"
         },
         {
             "item": "Sandwich de jamón y queso",
             "precio": 10,
-            "imagen":"../Products/sandwich.png"
+            "imagen": "./Products/sandwich.png"
 
         },
         {
             "item": "Jugo de frutas natural",
             "precio": 7,
-            "imagen": "../Products/jugo.png"
+            "imagen": "./src/Assets/Products/jugo.png"
         }
     ],
     "comida": [
