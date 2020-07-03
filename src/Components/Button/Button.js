@@ -6,16 +6,26 @@ import btnEnter from '../../Assets/btnEnter.png'
 
 const Button = ({ value, pink = false, green = false, enter= false, onClick }) => {
     let src = btnRosa;
+    let font ='40pt'
+    let width = '210px'
+    let height = '90'
     if (pink === true) {
         src = btnRosa
     }else if(green) {
         src = btnVerde
     }else if (enter){
         src = btnEnter
+        font = '25pt'
+        width = '150px'
+        height = '60px'
+    
     }
     const style = { 
         backgroundImage: `url(${src})`, 
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+        fontSize: `${font}`,
+        width: `${width}`,
+        height: `${height}`
      }
     return(
     // <>
@@ -23,7 +33,7 @@ const Button = ({ value, pink = false, green = false, enter= false, onClick }) =
     //     <p>{value} </p>
     // </>
 
-    <button style={style} onClick={onClick}>{value}</button>
+    <button className='btn' style={style} onClick={onClick}>{value}</button>
     )
 }
 

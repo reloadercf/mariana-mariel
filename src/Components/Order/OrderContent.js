@@ -23,6 +23,12 @@ const OrderContent = () => {
           descripcion: 'cafe americano',
           precio: '$20',
         },
+        {
+          key: '1',
+          cant: '1',
+          descripcion: 'cafe',
+          precio: '$26',
+        }
       ];
 
     return ( 

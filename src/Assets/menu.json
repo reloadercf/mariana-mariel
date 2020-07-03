@@ -19,7 +19,7 @@
         {
             "item": "Jugo de frutas natural",
             "precio": 7,
-            "imagen": "./src/Assets/Products/jugo.png"
+            "imagen": "./Products/jugo.png"
         }
     ],
     "comida": [
