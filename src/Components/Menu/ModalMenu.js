@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
-import { Modal, Button, Select, Col, Row } from 'antd';
+import { Modal, Select, Col, Row } from 'antd';
 import { PlusCircleTwoTone } from '@ant-design/icons'
+import Button from '../Button/Button'
+
 
 
 const ModalMenu = ({optionSelected}) => {
+
     const { Option } = Select;
     function handleChange(value) {
       console.log(`selected ${value}`);
@@ -14,15 +17,22 @@ const ModalMenu = ({optionSelected}) => {
   
     let showModal = () => {
       setState({
-        visible: true,
+        visible: true
       });
     };
   
     let handleOk = e => {
+      setOrder({
+        ...order,
+        descripcion: optionSelected.item,
+        precio: optionSelected.precio
+      })
       setState({
         visible: false,
       });
+      console.log(order)
     };
+   
   
     let handleCancel = e => {
         setState({
@@ -30,26 +40,26 @@ const ModalMenu = ({optionSelected}) => {
       });
     };
 
+    const [order, setOrder] = useState({
+      descripcion: optionSelected.item,
+      precio: optionSelected.precio
+    })
+    
       return (
-        <div>
-            <Button icon={<PlusCircleTwoTone />} onClick={showModal} />
+        <div className='modal1'>
+            <Button mas icon={<PlusCircleTwoTone />} onClick={showModal} />
             <Modal
                 className='modal'
                 visible={state.visible}
                 onOk={handleOk}
                 onCancel={handleCancel}
                 footer={[
-                  <Button key="back" onClick={handleCancel}>
-                    Regresar
-                  </Button>,
-                  <Button key="submit" type="primary" onClick={handleOk}>
-                    Agregar
-                  </Button>
+                  <Button id='btnAgregar' value='Agregar' enter key="submit" type="primary" onClick={handleOk}/>
                 ]}
             >
               <Col>
                 <Row justify="center">
-                  <img src='https://via.placeholder.com/200' alt='cafe' />
+                  <img src={optionSelected.imagen} alt='cafe' />
                 </Row>
                 <h3>{optionSelected.item}</h3>
                 <Select placeholder="Tipo" style={{ width: 175 }} onChange={handleChange}>

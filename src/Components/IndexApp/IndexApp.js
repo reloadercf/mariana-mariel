@@ -17,7 +17,9 @@ function IndexApp () {
                     <Link to ='/orden'>
                         <li><Button value = 'Orden' pink /></li>
                     </Link>
-                    <li><Button value = 'Cocina'/></li>
+                    <Link to = '/cocina'>
+                        <li><Button value = 'Cocina'/></li>
+                    </Link>
                 </ul>
             </nav>
             <div className='auth'>

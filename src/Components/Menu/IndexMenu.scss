@@ -1,0 +1,45 @@
+$bqcream: #FCFAE3;
+$bqpink: #FF7BAC;
+$bqgreen: #1EBC9E;
+$btMenu: '../Assets/btnMenu.png';
+$fontTitles: Victoria Melody;
+@mixin container {
+    border-radius: 10px;
+    border: solid $bqgreen 5pt;
+    background-color: $bqcream;
+}
+
+.card {
+    margin: 1rem;
+}
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ant-modal-content{
+    @include container;
+}
+.ant-modal-close-x{
+    position: relative;
+    width: 3rem;
+    height: 1rem;
+    line-height: 20px;
+    color: $bqpink;
+}
+.order{
+    display: flex;
+    flex-direction: column;
+}
+.btnMenu{
+    position: fixed;
+    margin: 0rem 4rem;
+
+}
+.menu{
+    margin-top: 6rem;
+    overflow: scroll;
+}
+.btnAgregar{
+    font-size: 25px;
+}
