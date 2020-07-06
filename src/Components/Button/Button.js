@@ -3,8 +3,9 @@ import '../Button/Button.scss'
 import btnRosa from '../../Assets/btnMenu.png'
 import btnVerde from '../../Assets/btnHeader.png'
 import btnEnter from '../../Assets/btnEnter.png'
+import btnMas from '../../Assets/mas.png'
 
-const Button = ({ value, pink = false, green = false, enter= false, onClick }) => {
+const Button = ({ value, pink = false, green = false, enter= false, mas= false, onClick }) => {
     let src = btnRosa;
     let font ='40pt'
     let width = '210px'
@@ -19,6 +20,8 @@ const Button = ({ value, pink = false, green = false, enter= false, onClick }) =
         width = '150px'
         height = '60px'
     
+    }else if (mas){
+        src = btnMas
     }
     const style = { 
         backgroundImage: `url(${src})`, 

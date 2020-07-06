@@ -47,7 +47,7 @@ const ModalMenu = ({optionSelected}) => {
     
       return (
         <div className='modal1'>
-            <Button value = '+' enter icon={<PlusCircleTwoTone />} onClick={showModal} />
+            <Button mas icon={<PlusCircleTwoTone />} onClick={showModal} />
             <Modal
                 className='modal'
                 visible={state.visible}
