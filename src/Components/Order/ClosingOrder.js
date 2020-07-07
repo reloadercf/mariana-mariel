@@ -2,7 +2,8 @@ import React from 'react';
 import { Input, Select, DatePicker, Divider } from 'antd';
 import Button from '../Button/Button';
 
-const ClosingOrder = () => {
+const ClosingOrder = ({suma}) => {
+    console.log(suma())
     const { Option } = Select;
 
     function handleChange(value) {
@@ -12,8 +13,8 @@ const ClosingOrder = () => {
     return ( 
         <div>
             <div className='btnOrder'>
-                <h4>Total: $20</h4>
-                <Button enter />
+                <h4>Total: ${suma()}</h4>
+                <Button value ='Ordenar' enter />
             </div>
             <div>
                 <Divider />

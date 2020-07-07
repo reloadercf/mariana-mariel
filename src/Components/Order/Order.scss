@@ -1,3 +1,7 @@
+@font-face{
+    font-family: Victoria Melody;
+    src: url('../../fonts/Victoria\ Melody.otf')
+}
 $bqcream: #FCFAE3;
 $bqpink: #FF7BAC;
 $bqgreen: #1EBC9E;
@@ -24,4 +28,11 @@ $fontTitles: Victoria Melody;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+.contentTable {
+    height: 220px;
+    overflow: scroll;
+}
+.ant-pagination {
+    display: none;
 }
