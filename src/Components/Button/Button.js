@@ -22,6 +22,8 @@ const Button = ({ value, pink = false, green = false, enter= false, mas= false, 
     
     }else if (mas){
         src = btnMas
+        width = '60px'
+        height = '40px'
     }
     const style = { 
         backgroundImage: `url(${src})`, 

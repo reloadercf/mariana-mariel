@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 import './IndexMenu.scss'
 import NavMenu from './NavMenu'
 
-const IndexMenu = ({addItem, setAddItem}) => {
+const IndexMenu = ({addProducto, carrito}) => {
 
     const [tab, setTab] = useState('comida')
     return ( 
@@ -15,7 +15,7 @@ const IndexMenu = ({addItem, setAddItem}) => {
                 <Button value ='Comidas' pink onClick={() => { setTab('comida')}}/>
             </div>
             <Row className="menu">
-                <NavMenu tab={tab} addItem={addItem} setAddItem={setAddItem} />
+                <NavMenu tab={tab} carrito={carrito} addProducto={addProducto} />
             </Row>
             
         </Col>
