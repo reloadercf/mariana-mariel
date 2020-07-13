@@ -3,7 +3,34 @@ import { Modal, Select, Col, Row } from 'antd';
 import { PlusCircleTwoTone } from '@ant-design/icons'
 import Button from '../Button/Button'
 
-const ModalMenu = ({optionSelected,  carrito, addProducto}) => {
+
+
+const ModalMenu = ({item, carrito, addProducto}) => {
+  const quantity = useQuantity(carrito.item && carrito.item.quantity)
+
+  function useQuantity(defaultQuantity) {
+    const [value, setValue] = useState(defaultQuantity || 1);
+    console.log(value, 'value')
+    function onChange(e) {
+      if (!(+e.target.value >= 1)) {
+        setValue(1);
+        return;
+      }
+      setValue(+e.target.value);
+  }
+  return {
+    value,
+    setValue,
+    onChange
+  };
+  
+  };
+  
+  const order = {
+    ...item,
+    quantity: quantity.value,
+    subtotal: quantity.value * item.precio
+  }
 
     const { Option } = Select;
     function handleChange(value) {
@@ -19,23 +46,12 @@ const ModalMenu = ({optionSelected,  carrito, addProducto}) => {
       });
     };
   
-    let addToOrder = e => {
-      //no uses esto
-      // setAddItem((previous) => [
-      //   ...previous,
-      //   {
-      //     ...addItem,
-      //     key: optionSelected.id,
-      //     descripcion: optionSelected.item,
-      //     precio: optionSelected.precio,
-      //     quantity:1
-      //   }
-      // ])
+    let addToOrder = () => {
+      addProducto(order)
 
-      // setState({
-      //   visible: false,
-      // });
-      // console.log(addItem)
+      setState({
+        visible: false,
+      });
     };
 
     let handleCancel = e => {
@@ -58,9 +74,22 @@ const ModalMenu = ({optionSelected,  carrito, addProducto}) => {
           >
             <Col>
               <Row justify="center">
-                <img src={optionSelected.imagen} alt='cafe' />
+                <img src={item.imagen} alt='cafe' />
               </Row>
-              <h3>{optionSelected.item}</h3>
+              <h3>{item.item}</h3>
+              <div>
+              <span>cantidad</span>
+              <button onClick={() => {
+                  quantity.setValue(quantity.value - 1);
+                }}
+              >-</button>
+              <input {...quantity}></input>
+              <button onClick={() => {
+                quantity.setValue(quantity.value + 1);
+              }}
+              >+</button>
+
+              </div>
               <Select placeholder="Tipo" style={{ width: 175 }} onChange={handleChange}>
                 <Option value="Opcion1">Opcion 1</Option>
                 <Option value="Opcion2">Opcion 2</Option>
