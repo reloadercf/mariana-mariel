@@ -2,7 +2,7 @@ import React from 'react';
 import { Input, Select, DatePicker, Divider } from 'antd';
 import Button from '../Button/Button';
 
-const ClosingOrder = ({suma}) => {
+const ClosingOrder = ({suma,addProducto /*aqui necesitas recibir el elemento*/}) => {
     console.log(suma())
     const { Option } = Select;
 
@@ -14,7 +14,7 @@ const ClosingOrder = ({suma}) => {
         <div>
             <div className='btnOrder'>
                 <h4>Total: ${suma()}</h4>
-                <Button value ='Ordenar' enter />
+                <Button value ='Ordenar' enter onClick={()=>addProducto(/*id*/)} />
             </div>
             <div>
                 <Divider />

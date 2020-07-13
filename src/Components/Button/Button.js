@@ -22,6 +22,8 @@ const Button = ({ value, pink = false, green = false, enter= false, mas= false, 
         height = '60px'
     }else if (mas){
         src = btnMas
+        width = '60px'
+        height = '40px'
     }
 
     const style = { 

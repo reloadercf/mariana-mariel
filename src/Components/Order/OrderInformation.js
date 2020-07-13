@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input, Select } from 'antd';
 
-const OrderInformation = () => {
+const OrderInformation = (addDatosCliente) => {
     const { Option } = Select;
 
     function handleChange(value) {
