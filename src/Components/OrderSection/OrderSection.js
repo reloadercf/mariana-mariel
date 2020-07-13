@@ -39,7 +39,7 @@ const OrderSection = () => {
   return ( 
     <Row className= 'content' justify='space-around'>
       <Header />
-      <IndexMenu carrito={carrito} addProducto={addProducto} />
+      <IndexMenu carrito={carrito} addProducto={addProducto} setCarrito={setCarrito} />
       <Order carrito={carrito} addDatosCliente={addDatosCliente} />
     </Row>      
   );

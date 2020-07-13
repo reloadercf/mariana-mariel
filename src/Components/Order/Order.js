@@ -19,7 +19,7 @@ const Order = ({carrito, addDatosCliente}) => {
         <Col className='order' size='large' span={9} >
             <OrderInformation addDatosCliente={addDatosCliente} />
             <OrderContent carrito={carrito} />
-            <ClosingOrder suma={suma} />
+            <ClosingOrder suma={suma} carrito={carrito}/>
         </Col>
      );
 }
