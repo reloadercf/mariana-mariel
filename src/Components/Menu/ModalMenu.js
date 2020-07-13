@@ -3,7 +3,7 @@ import { Modal, Select, Col, Row } from 'antd';
 import { PlusCircleTwoTone } from '@ant-design/icons'
 import Button from '../Button/Button'
 
-const ModalMenu = ({optionSelected, addItem, setAddItem}) => {
+const ModalMenu = ({optionSelected,  carrito, addProducto}) => {
 
     const { Option } = Select;
     function handleChange(value) {
@@ -20,18 +20,22 @@ const ModalMenu = ({optionSelected, addItem, setAddItem}) => {
     };
   
     let addToOrder = e => {
-      setAddItem((previous) => [
-        ...previous,
-        {
-          ...addItem,
-          descripcion: optionSelected.item,
-          precio: optionSelected.precio
-        }
-      ])
-      setState({
-        visible: false,
-      });
-      console.log(addItem)
+      //no uses esto
+      // setAddItem((previous) => [
+      //   ...previous,
+      //   {
+      //     ...addItem,
+      //     key: optionSelected.id,
+      //     descripcion: optionSelected.item,
+      //     precio: optionSelected.precio,
+      //     quantity:1
+      //   }
+      // ])
+
+      // setState({
+      //   visible: false,
+      // });
+      // console.log(addItem)
     };
 
     let handleCancel = e => {
