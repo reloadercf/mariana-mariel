@@ -1,18 +1,13 @@
 import React, {useState} from 'react';
-import { Modal, Select, Col, Row } from 'antd';
-import { PlusCircleTwoTone } from '@ant-design/icons'
-import Button from '../Button/Button'
+import { Modal, Col, Row } from 'antd';
+import Button from '../Button/Button';
+import Extras from '../Menu/Extras'
 
 const ModalMenu = ({optionSelected, addItem, setAddItem}) => {
-
-    const { Option } = Select;
-    function handleChange(value) {
-      console.log(`selected ${value}`);
-    }
-    const [state, setState] = useState({
+   const [state, setState] = useState({
         visible: false
     }) 
-  
+
     let showModal = () => {
       setState({
         visible: true
@@ -25,7 +20,9 @@ const ModalMenu = ({optionSelected, addItem, setAddItem}) => {
         {
           ...addItem,
           descripcion: optionSelected.item,
-          precio: optionSelected.precio
+          precio: optionSelected.precio,
+          tipo: Option.value,
+         
         }
       ])
       setState({
@@ -35,14 +32,14 @@ const ModalMenu = ({optionSelected, addItem, setAddItem}) => {
     };
 
     let handleCancel = e => {
-        setState({
-        visible: false,
-      });
-    };
+      setState({
+      visible: false,
+    });
+  };
     
     return (
       <div className='modal1'>
-      <Button mas icon={<PlusCircleTwoTone />} onClick={showModal} />
+      <Button mas onClick={showModal} />
           <Modal
               className='modal'
               visible={state.visible}
@@ -57,14 +54,7 @@ const ModalMenu = ({optionSelected, addItem, setAddItem}) => {
                 <img src={optionSelected.imagen} alt='cafe' />
               </Row>
               <h3>{optionSelected.item}</h3>
-              <Select placeholder="Tipo" style={{ width: 175 }} onChange={handleChange}>
-                <Option value="Opcion1">Opcion 1</Option>
-                <Option value="Opcion2">Opcion 2</Option>
-              </Select>
-              <Select placeholder="Extras" style={{ width: 175 }} onChange={handleChange}>
-                <Option value="Extra1">Extra 1</Option>
-                <Option value="Extra2">Extra 2</Option>
-              </Select>
+                <Extras />
               </Col>
           </Modal>
       </div>
