@@ -2,8 +2,13 @@ import React from 'react';
 import { Input, Select, DatePicker, Divider } from 'antd';
 import Button from '../Button/Button';
 
-const ClosingOrder = ({suma,addProducto /*aqui necesitas recibir el elemento*/}) => {
-    console.log(suma())
+const ClosingOrder = ({addProducto, carrito}) => {
+    const suma = () => {
+        let costs = carrito.item.map(item => item.subtotal);
+        let result = costs.reduce((acc, el) => acc + el, 0);
+        return result;
+      }
+    
     const { Option } = Select;
 
     function handleChange(value) {

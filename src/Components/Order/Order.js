@@ -5,21 +5,13 @@ import OrderInformation from './OrderInformation'
 import OrderContent from './OrderContent'
 import ClosingOrder from './ClosingOrder'
 
-const Order = ({carrito, addDatosCliente}) => {
-    
-  const suma = () => {
-    
-    // let costs = 10 //esto esta mal
-    let result = 10
-    return result;
-  }
-  
+const Order = ({carrito, deleteProducto}) => {
 
  return ( 
         <Col className='order' size='large' span={9} >
-            <OrderInformation addDatosCliente={addDatosCliente} />
-            <OrderContent carrito={carrito} />
-            <ClosingOrder suma={suma} />
+            <OrderInformation carrito={carrito} />
+            <OrderContent carrito={carrito} deleteProducto={deleteProducto} />
+            <ClosingOrder carrito={carrito}/>
         </Col>
      );
 }
