@@ -15,32 +15,19 @@ const OrderSection = () => {
     orden: ""
   })
 
-  const addDatosCliente = (mesa, orden, cliente) => {
-    setCarrito({
-      nombreCliente: cliente,
-      mesa: mesa,
-      orden: orden
-    })
-
+  function addProducto(producto){
+    setCarrito({...carrito, item:[...carrito.item,producto]})
   }
 
-  function addProducto(producto){
-    console.log(carrito.item)
-    console.log(producto)
-    if(carrito.item.includes(producto)) {
-      console.log('ya existe ' + producto.item);
-      setCarrito({item:[...carrito.item, producto.quantity ++]});
-    } else setCarrito({...carrito, item:[...carrito.item,producto]})
-    //aqui tienes que validar si existe, 
-      //si es que SI existe entonces sumale a cantidad 1
-      //en caso de que no exista setCarrito({...carrito, item:[...carrito.item,producto]})
+  const deleteProducto = (id) => {
+    setCarrito({...carrito, item: carrito.item.filter(item => item.id !== id)})
   }
   
   return ( 
     <Row className= 'content' justify='space-around'>
       <Header />
       <IndexMenu carrito={carrito} addProducto={addProducto} setCarrito={setCarrito} />
-      <Order carrito={carrito} addDatosCliente={addDatosCliente} />
+      <Order carrito={carrito} setCarrito={setCarrito} deleteProducto={deleteProducto} />
     </Row>      
   );
   }
