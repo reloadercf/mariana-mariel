@@ -3,6 +3,7 @@ import { Table, Divider } from 'antd';
 import { DeleteTwoTone } from '@ant-design/icons'
 
 const OrderContent = ({carrito, deleteProducto}) => {
+  console.log(carrito,'this is carrito')
   const columns = [
     {
       title: 'Cant',

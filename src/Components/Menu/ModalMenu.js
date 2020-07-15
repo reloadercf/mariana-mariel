@@ -4,8 +4,44 @@ import Button from '../Button/Button';
 import shortid from 'shortid';
 import Extras from '../Menu/Extras'
 
-const ModalMenu = ({item, carrito, addProducto}) => {
+
+const ModalMenu = ({item, carrito, addProducto, checkExtra}) => {
+  const extrasList = [
+    "Queso",
+    "Pepperoni",
+    "Tocino",
+    "Huevo"
+  ];
+
+  function getDefaultExtras() {
+    return extrasList.map(extra => ({
+        ingrediente: extra,
+        checked: false
+    }))
+}
+
+
   const quantity = useQuantity(carrito.item && carrito.item.quantity)
+  const extras = useExtras(carrito.item.extras)
+  console.log(extras, 'extras')
+
+  function useExtras(defaultExtra){
+    const [ extras, setExtras] = useState(
+      defaultExtra || getDefaultExtras()
+    )
+    
+    function checkExtra(i){
+        const newExtras = [...extras];
+        newExtras[i].checked = !newExtras[i].checked;
+        setExtras(newExtras)
+    }
+    return {
+        checkExtra,
+        extras
+    }
+
+   
+}
 
   function useQuantity(defaultQuantity) {
     const [value, setValue] = useState(defaultQuantity || 1);
@@ -27,7 +63,8 @@ const ModalMenu = ({item, carrito, addProducto}) => {
     ...item,
     id: shortid.generate(),
     quantity: quantity.value,
-    subtotal: quantity.value * item.precio
+    subtotal: quantity.value * item.precio,
+    extras: extras.extras
   }
 
     const [state, setState] = useState({
@@ -53,9 +90,11 @@ const ModalMenu = ({item, carrito, addProducto}) => {
         visible: false,
       });
     };
+
     function hasExtras(item) {
       return item.extras === 'extras';
     }
+
     return (
       <div className='modal1'>
       <Button mas onClick={showModal} />
@@ -80,8 +119,8 @@ const ModalMenu = ({item, carrito, addProducto}) => {
                 <button onClick={() => {quantity.setValue(quantity.value + 1)}}>+</button>
               </div>
               {hasExtras(item) && <>
-                <h3>Extras:</h3>
-                <Extras />
+                <h4>Agregar Extras:</h4>
+                <Extras {...extras}/>
               </>}
               </Col>
           </Modal>
