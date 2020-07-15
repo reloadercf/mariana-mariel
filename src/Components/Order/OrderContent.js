@@ -1,17 +1,13 @@
 import React from 'react';
 import { Table, Divider } from 'antd';
+import { DeleteTwoTone } from '@ant-design/icons'
 
-const OrderContent = ({carrito,addProducto}) => {
-
-console.log(carrito.item)
+const OrderContent = ({carrito, deleteProducto}) => {
   const columns = [
     {
       title: 'Cant',
       dataIndex: 'quantity',
-      key: 'quantity',
-      render: (quantity) =>{
-        return <span>{quantity}<button>Borrar</button></span>
-      }
+      key: 'quantity'
     },
     {
       title: 'Descripcion',
@@ -26,11 +22,15 @@ console.log(carrito.item)
     {
       title: 'Subtotal',
       key: 'subtotal',
-      dataIndex:'quantity',
-      render: (quantity, precio) =>{
-        return <span>${quantity*precio.precio}</span>
+      dataIndex:'subtotal',
+    },
+    {
+      title: '',
+      dataIndex: 'id',
+      key: 'id',
+      render: (id) =>{
+        return <DeleteTwoTone onClick={() => deleteProducto(id)} />
       }
-     
     },
   ];
 

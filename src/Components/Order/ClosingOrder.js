@@ -3,15 +3,11 @@ import { Input, Select, DatePicker, Divider } from 'antd';
 import Button from '../Button/Button';
 
 const ClosingOrder = ({addProducto, carrito}) => {
-
-    console.log(carrito.item)
     const suma = () => {
         let costs = carrito.item.map(item => item.subtotal);
-        console.log(costs)
         let result = costs.reduce((acc, el) => acc + el, 0);
         return result;
       }
-      console.log(suma())
     
     const { Option } = Select;
 

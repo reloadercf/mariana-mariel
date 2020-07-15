@@ -106,21 +106,18 @@ let Comidas=[
 ]
 
 const NavMenu = ({ tab,  carrito, addProducto }) => {
-   
     return(
-        <div>
-        
+        <>
             {tab==="comida"?
-            <div>
-            
+            <>
                 {Comidas.map(item=> <CardMenu key={item.id} item={item}  carrito={carrito} addProducto={addProducto} />)}
-            </div>:
-            <div>
+            </>:
+            <>
                 {Desayunos.map(item=> <CardMenu key={item.id} item={item} carrito={carrito} addProducto={addProducto} />)}
-            </div>
+            </>
             }
-        </div>
+        </>
     )
 }
 
-export default NavMenu
+export default NavMenu;

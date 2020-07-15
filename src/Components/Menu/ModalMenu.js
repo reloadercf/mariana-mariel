@@ -1,33 +1,31 @@
 import React, {useState} from 'react';
 import { Modal, Select, Col, Row } from 'antd';
 import { PlusCircleTwoTone } from '@ant-design/icons'
-import Button from '../Button/Button'
-
-
+import Button from '../Button/Button';
+import shortid from 'shortid';
 
 const ModalMenu = ({item, carrito, addProducto}) => {
   const quantity = useQuantity(carrito.item && carrito.item.quantity)
 
   function useQuantity(defaultQuantity) {
     const [value, setValue] = useState(defaultQuantity || 1);
-    console.log(value, 'value')
     function onChange(e) {
       if (!(+e.target.value >= 1)) {
         setValue(1);
         return;
       }
       setValue(+e.target.value);
-  }
-  return {
-    value,
-    setValue,
-    onChange
-  };
-  
+    }
+    return {
+      value,
+      setValue,
+      onChange
+    };
   };
   
   const order = {
     ...item,
+    id: shortid.generate(),
     quantity: quantity.value,
     subtotal: quantity.value * item.precio
   }
@@ -78,17 +76,10 @@ const ModalMenu = ({item, carrito, addProducto}) => {
               </Row>
               <h3>{item.item}</h3>
               <div>
-              <span>cantidad</span>
-              <button onClick={() => {
-                  quantity.setValue(quantity.value - 1);
-                }}
-              >-</button>
-              <input {...quantity}></input>
-              <button onClick={() => {
-                quantity.setValue(quantity.value + 1);
-              }}
-              >+</button>
-
+                <span>cantidad</span>
+                <button onClick={() => {quantity.setValue(quantity.value - 1)}}>-</button>
+                <input {...quantity}></input>
+                <button onClick={() => {quantity.setValue(quantity.value + 1)}}>+</button>
               </div>
               <Select placeholder="Tipo" style={{ width: 175 }} onChange={handleChange}>
                 <Option value="Opcion1">Opcion 1</Option>
