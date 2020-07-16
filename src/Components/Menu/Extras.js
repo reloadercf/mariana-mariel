@@ -1,25 +1,27 @@
-import React, {useState} from 'react';
-import {Select} from 'antd';
+import React from 'react';
 
-const Extras = () => {
-    
-    const { Option } = Select;
 
-    function handleChange(value) {
-      console.log(`selected ${value}`);
-    }
-   
+
+
+const Extras = ({extras, checkExtra}) => {
+
     return(
         <div>
-        <Select placeholder="Tipo" style={{ width: 175 }} onChange={handleChange}>
-            <Option value="Pollo">Pollo</Option>
-            <Option value="Res">Res</Option>
-            <Option value="Vegana">Vegana</Option>
-        </Select>
-        <Select placeholder="Extras" style={{ width: 175 }} onChange={handleChange}>
-            <Option value="Queso">Queso</Option>
-            <Option value="Tocino">Tocino</Option>
-        </Select>
+            {extras.map((extra, i)=>(
+               <form>
+                  <span>{extra.ingrediente}</span>
+                <input 
+                  checked = {extra.checked} 
+                  type= 'checkbox'   
+                  onClick={()=>{ 
+                    checkExtra(i)
+                  
+                  }}>
+                </input>
+            </form>
+            ))
+            }
+            
         </div>
     )
 }
