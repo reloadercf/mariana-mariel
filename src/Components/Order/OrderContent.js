@@ -3,7 +3,20 @@ import { Table, Divider } from 'antd';
 import { DeleteTwoTone } from '@ant-design/icons'
 
 const OrderContent = ({carrito, deleteProducto}) => {
-  console.log(carrito,'this is carrito')
+ 
+
+  function addExtras(){
+    //const myItem = carrito.item.filter(itm => itm.extras === extras) // este es el item que quiero renderizar
+
+    
+    if(carrito.item[0].extras){
+      console.log('ok', carrito.item[0].extras)
+    }
+  }
+  //addExtras()
+
+  console.log('add extra', addExtras)
+  
   const columns = [
     {
       title: 'Cant',
@@ -13,7 +26,7 @@ const OrderContent = ({carrito, deleteProducto}) => {
     {
       title: 'Descripcion',
       dataIndex: 'item',
-      key: 'item'
+      key: 'item',
     },
     {
       title: 'Precio',
@@ -35,11 +48,14 @@ const OrderContent = ({carrito, deleteProducto}) => {
     },
   ];
 
+ 
+    
     return ( 
         <div>
             <Divider />
             <Table className="contentTable" columns={columns} dataSource={carrito.item} size="small" pagination={{ pageSize: 50 }} scroll={{ y: 240 }} />
             <Divider />
+            <button onClick= {addExtras}>llamar EXtra</button>
         </div>
      );
 }
