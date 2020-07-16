@@ -44,7 +44,8 @@ let Comidas=[
         precio: 10,
         imagen: "../Products/burger.png",
         quantity:1,
-        subtotal:0
+        subtotal:0,
+        extras: 'extras'
     },
     {
         id: 6,
@@ -52,7 +53,8 @@ let Comidas=[
         precio: 15,
         imagen: "../Products/doble.png",
         quantity:1,
-        subtotal:0
+        subtotal:0,
+        extras: 'extras'
     },
     {
         id: 7,
