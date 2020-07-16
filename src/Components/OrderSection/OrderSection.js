@@ -12,7 +12,8 @@ const OrderSection = () => {
     status:false,
     pay:false,
     mesa:"",
-    orden: ""
+    orden: "",
+    mesero: ""
   })
 
   function addProducto(producto){
