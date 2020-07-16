@@ -10,6 +10,7 @@ const Button = ({ value, pink = false, green = false, enter= false, mas= false, 
     let font ='40pt'
     let width = '210px'
     let height = '90'
+
     if (pink === true) {
         src = btnRosa
     }else if(green) {
@@ -19,12 +20,12 @@ const Button = ({ value, pink = false, green = false, enter= false, mas= false, 
         font = '25pt'
         width = '150px'
         height = '60px'
-    
     }else if (mas){
         src = btnMas
         width = '60px'
         height = '40px'
     }
+
     const style = { 
         backgroundImage: `url(${src})`, 
         backgroundRepeat: 'no-repeat',
@@ -33,11 +34,6 @@ const Button = ({ value, pink = false, green = false, enter= false, mas= false, 
         height: `${height}`
      }
     return(
-    // <>
-    //     <img src = {src} ></img>
-    //     <p>{value} </p>
-    // </>
-
     <button className='btn' style={style} onClick={onClick}>{value}</button>
     )
 }
