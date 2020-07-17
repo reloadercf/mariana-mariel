@@ -30,9 +30,15 @@ $fontTitles: Victoria Melody;
     align-items: flex-end;
 }
 .contentTable {
-    height: 220px;
+    height: 300px;
     overflow: scroll;
 }
 .ant-pagination {
     display: none;
+}
+.ant-divider-horizontal{
+    margin: 10px 0px;
+}
+.ant-table.ant-table-middle{
+    padding: 0px;
 }

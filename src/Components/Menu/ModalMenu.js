@@ -23,7 +23,6 @@ const ModalMenu = ({item, carrito, addProducto, checkExtra}) => {
 
   const quantity = useQuantity(carrito.item && carrito.item.quantity)
   const extras = useExtras(carrito.item.extras)
-  console.log(extras, 'extras')
 
   function useExtras(defaultExtra){
     const [ extras, setExtras] = useState(
@@ -111,11 +110,11 @@ const ModalMenu = ({item, carrito, addProducto, checkExtra}) => {
               <Row justify="center">
                 <img src={item.imagen} alt='cafe' />
               </Row>
-              <h3>{item.item}</h3>
-              <div>
-                <span>cantidad</span>
+              <h2>{item.item}</h2>            
+              <div className='quantityDiv'>
+                <h5>Cantidad</h5>
                 <button onClick={() => {quantity.setValue(quantity.value - 1)}}>-</button>
-                <input {...quantity}></input>
+                <input  className= 'inputQuantity' {...quantity}></input>
                 <button onClick={() => {quantity.setValue(quantity.value + 1)}}>+</button>
               </div>
               {hasExtras(item) && <>
