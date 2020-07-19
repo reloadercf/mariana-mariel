@@ -1,11 +1,16 @@
 import React from 'react';
 import { Input, Select } from 'antd';
 
-const OrderInformation = () => {
+const OrderInformation = ({carrito, setCarrito}) => {
     const { Option } = Select;
-
+    console.log(carrito)
+    const clientName = (e) => {
+        let name = e.target.value;
+        setCarrito({...carrito, nombreCliente: name})
+    }
     function handleChange(value) {
-      console.log(`selected ${value}`);
+        setCarrito({...carrito,mesa: value})
+        console.log(`selected ${value}`);
     }
     return ( 
         <div>
@@ -16,7 +21,7 @@ const OrderInformation = () => {
                 <Option value="Mesa4">Mesa 4</Option>
             </Select>
             <Input placeholder="Orden" style={{ width: 175 }} />
-            <Input placeholder="Nombre" />
+            <Input placeholder="Nombre" onChange={clientName} />
         </div>
      );
 }
