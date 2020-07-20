@@ -2,41 +2,44 @@ import React from 'react';
 import { Table, Divider } from 'antd';
 import { DeleteTwoTone } from '@ant-design/icons'
 
-const OrderContent = ({carrito, deleteProducto}) => {
- 
+const OrderContent = ({carrito: carritoOrig, deleteProducto}) => {
 
-  function addExtras(){
-    //const myItem = carrito.item.filter(itm => itm.extras === extras) // este es el item que quiero renderizar
-
-    
-    if(carrito.item[0].extras){
-      console.log('ok', carrito.item[0].extras)
-    }
+  const carrito = {
+    ...carritoOrig,
+    item: carritoOrig.item.map(i => ({
+      ...i,
+      item: i.item + ' ' + i.extras.filter(e => e.checked)
+                                   .map(e => e.ingrediente)
+                                   .join(', ')
+    }))
   }
-  //addExtras()
-
-  console.log('add extra', addExtras)
+ 
   
   const columns = [
     {
       title: 'Cant',
       dataIndex: 'quantity',
-      key: 'quantity'
+      key: 'quantity',
+      width: 50
     },
     {
-      title: 'Descripcion',
+      title: 'Descripción',
       dataIndex: 'item',
       key: 'item',
+      width: 150,
+      fixed: 'left'
     },
     {
       title: 'Precio',
       dataIndex: 'precio',
-      key: 'precio'
+      key: 'precio',
+      width: 60
     },
     {
-      title: 'Subtotal',
+      title: 'Sub',
       key: 'subtotal',
       dataIndex:'subtotal',
+      width: 60
     },
     {
       title: '',
@@ -44,7 +47,8 @@ const OrderContent = ({carrito, deleteProducto}) => {
       key: 'id',
       render: (id) =>{
         return <DeleteTwoTone onClick={() => deleteProducto(id)} />
-      }
+      },
+      width: 30
     },
   ];
 
@@ -53,9 +57,8 @@ const OrderContent = ({carrito, deleteProducto}) => {
     return ( 
         <div>
             <Divider />
-            <Table className="contentTable" columns={columns} dataSource={carrito.item} size="small" pagination={{ pageSize: 50 }} scroll={{ y: 240 }} />
+            <Table className="contentTable" columns={columns} dataSource={carrito.item} size="middle" pagination={{ pageSize: 50 }} scroll={{ y: 300 }} />
             <Divider />
-            <button onClick= {addExtras}>llamar EXtra</button>
         </div>
      );
 }

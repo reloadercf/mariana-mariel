@@ -23,6 +23,7 @@ $fontTitles: Victoria Melody;
 }
 .ant-modal-content{
     @include container;
+
 }
 .ant-modal-close-x{
     position: relative;
@@ -47,4 +48,31 @@ $fontTitles: Victoria Melody;
 }
 .btnAgregar{
     font-size: 25px;
+}
+.quantityDiv{
+    display: flex;
+    flex-direction: row;
+    button{
+        background: none;
+        border: none;
+        color: $bqpink;
+        font-size: 22pt;
+        font-weight: bold;
+    }
+    h5{
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        margin-bottom: 0px;
+        margin-right: 10px;
+        padding-top: 15px;;
+    }
+}
+.inputQuantity{
+    width: 40px;
+    background: none;
+    border: none;
+    font-size: 15pt;
+    padding-left: 15px;
 }
