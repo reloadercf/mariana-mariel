@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import Logo from '../Logo/Logo';
 import NavHeader from '../Header/NavHeader/NavHeader';
-import './Header.scss'
+import '../Header/Header.scss'
 
 const Header = () => (
     <div className = 'containerHeader'>
