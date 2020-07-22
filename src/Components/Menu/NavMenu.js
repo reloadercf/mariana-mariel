@@ -8,7 +8,7 @@ let Desayunos=[
         precio: 5,
         imagen: "./Products/cafe.png",
         quantity:1,
-        subtotal:0
+        subtotal:0,
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ let Desayunos=[
         precio: 7,
         imagen: "./Products/cafeLeche.png",
         quantity:1,
-        subtotal:0
+        subtotal:0,
     },
     {
         id: 3,
@@ -24,8 +24,7 @@ let Desayunos=[
         precio: 10,
         imagen: "./Products/sandwich.png",
         quantity:1,
-        subtotal:0
-
+        subtotal:0,
     },
     {
         id: 4,
@@ -33,7 +32,7 @@ let Desayunos=[
         precio: 7,
         imagen: "./Products/jugo.png",
         quantity:1,
-        subtotal:0
+        subtotal:0,
     }
 ]
 
@@ -62,8 +61,7 @@ let Comidas=[
         precio: 5,
         imagen: "../Products/papas.png",
         quantity:1,
-        subtotal:0
-
+        subtotal:0,
     },
     {
         id: 8,
@@ -71,7 +69,7 @@ let Comidas=[
         precio: 5,
         imagen: "../Products/cebolla.png",
         quantity:1,
-        subtotal:0
+        subtotal:0,
     },
     {
         id: 9,
@@ -79,7 +77,7 @@ let Comidas=[
         precio: 5,
         imagen: "../Products/jugo.png",
         quantity:1,
-        subtotal:0
+        subtotal:0,
     },
     {
         id: 10,
@@ -87,7 +85,7 @@ let Comidas=[
         precio: 7,
         imagen: "../Products/jugo.png",
         quantity:1,
-        subtotal:0
+        subtotal:0,
     },
     {
         id: 11,
@@ -95,7 +93,7 @@ let Comidas=[
         precio: 7,
         imagen: "../Products/refresco.png",
         quantity:1,
-        subtotal:0
+        subtotal:0,
     },
     {
         id: 12,
@@ -103,7 +101,7 @@ let Comidas=[
         precio: 10,
         imagen: "../Products/refresco.png",
         quantity:1,
-        subtotal:0
+        subtotal:0,
     }
 ]
 

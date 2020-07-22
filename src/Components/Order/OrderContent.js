@@ -27,7 +27,6 @@ const OrderContent = ({carrito: carritoOrig, deleteProducto}) => {
       dataIndex: 'item',
       key: 'item',
       width: 150,
-      fixed: 'left'
     },
     {
       title: 'Precio',
