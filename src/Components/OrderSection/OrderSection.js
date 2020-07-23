@@ -17,6 +17,9 @@ const OrderSection = () => {
   })
 
   function addProducto(producto){
+    //saber si existe
+    //en caso de existir sumar uno
+    //si no existe crear uno nuevo
     setCarrito({...carrito, item:[...carrito.item,producto]})
   }
 

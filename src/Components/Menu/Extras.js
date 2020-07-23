@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 
 
@@ -6,23 +6,23 @@ import React from 'react';
 const Extras = ({extras, checkExtra}) => {
 
     return(
-        <div>
+        <Fragment>
             {extras.map((extra, i)=>(
-               <form>
+               <form key={extra.ingrediente}>
                   <span>{extra.ingrediente}</span>
-                <input 
+                {/* <input 
                   checked = {extra.checked} 
                   type= 'checkbox'   
                   onClick={()=>{ 
                     checkExtra(i)
                   
-                  }}>
-                </input>
+                  }}> 
+                </input> */}
             </form>
             ))
             }
             
-        </div>
+        </Fragment>
     )
 }
 

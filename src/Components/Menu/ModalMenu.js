@@ -114,7 +114,7 @@ const ModalMenu = ({item, carrito, addProducto, checkExtra}) => {
               <div className='quantityDiv'>
                 <h5>Cantidad</h5>
                 <button onClick={() => {quantity.setValue(quantity.value - 1)}}>-</button>
-                <input  className= 'inputQuantity' {...quantity}></input>
+                <input  className= 'inputQuantity' />
                 <button onClick={() => {quantity.setValue(quantity.value + 1)}}>+</button>
               </div>
               {hasExtras(item) && <>
